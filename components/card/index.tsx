@@ -5,13 +5,13 @@ import style from './card.module.scss';
 import { CardSwiper } from 'react-card-rotate-swiper';
 import axios from 'axios';
 import Image from 'next/image';
-
+import { clsx } from 'clsx';
 interface CardProps {
 	img: any;
 }
 const Card = ({ img }: CardProps) => {
 	return (
-		<div className={style.card}>
+		<div className={clsx(style.card, style.shadow)}>
 			<img src={img} />
 		</div>
 	);

@@ -1,3 +1,60 @@
 .card {
+	// position: absolute;
 	min-width: 320px;
+	// overflow: hidden;
+	max-height: 100%;
+	position: relative;
+	background-color: #fff;
+	border-radius: 30px;
+	// box-shadow: 1px 1px 2px 5px rgba(228, 207, 207, 0.3);
+}
+
+.shadow {
+	position: relative;
+	margin: 100px auto;
+	// width: 500px;
+	// height: 350px;
+	background: #010002;
+	border-radius: 20px;
+}
+
+.shadow:before,
+.shadow:after {
+	content: '';
+	position: absolute;
+	top: -2px;
+	left: -2px;
+	background: linear-gradient(
+		45deg,
+		#fb0094,
+		#0000ff,
+		#00ff00,
+		#ffff00,
+		#ff0000,
+		#fb0094,
+		#0000ff,
+		#00ff00,
+		#ffff00,
+		#ff0000
+	);
+	background-size: 400% 400%;
+	width: calc(100% + 6px);
+	height: calc(100% + 6px);
+	border-radius: 20px;
+	z-index: -1;
+	animation: animate 3s ease alternate infinite;
+}
+.shadow:after {
+	filter: blur(20px);
+}
+@keyframes animate {
+	0% {
+		background-position: 0 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
