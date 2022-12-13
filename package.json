@@ -17,7 +17,9 @@
     "eslint-config-next": "13.0.2",
     "next": "13.0.2",
     "react": "18.2.0",
+    "react-card-rotate-swiper": "^0.0.14",
     "react-dom": "18.2.0",
+    "react-responsive-carousel": "^3.2.23",
     "react-tinder-card": "1.5.4",
     "sass": "^1.56.0",
     "typescript": "4.8.4"
