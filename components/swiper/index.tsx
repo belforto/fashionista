@@ -29,16 +29,18 @@ const Swiper = (props: any) => {
 
 	return (
 		<div className={style.swiperContainer}>
-			{images?.map((img: any, i: number) => (
-				<CardSwiper
-					detectingSize={50}
-					throwLimit={1000}
-					key={i}
-					onSwipe={handleSwipe}
-					className={style.swiper}
-					contents={<Card key={i} img={IMG_BASE + img.backdrop_path} />}
-				/>
-			))}
+			<div className={style.swiperDeck}>
+				{images?.map((img: any, i: number) => (
+					<CardSwiper
+						detectingSize={50}
+						throwLimit={1000}
+						key={i}
+						onSwipe={handleSwipe}
+						className={style.swiper}
+						contents={<Card key={i} img={IMG_BASE + img.backdrop_path} />}
+					/>
+				))}
+			</div>
 		</div>
 	);
 };
