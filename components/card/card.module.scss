@@ -1,21 +1,30 @@
 .card {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	// position: absolute;
-	min-width: 320px;
+	// min-width: 320px;
 	// overflow: hidden;
-	max-height: 100%;
-	position: relative;
-	background-color: #fff;
-	border-radius: 30px;
+	// max-height: 100%;
+	// position: relative;
+	// background-color: #fff;
+	border-radius: 20px;
+	img {
+		border-radius: 20px;
+	}
 	// box-shadow: 1px 1px 2px 5px rgba(228, 207, 207, 0.3);
 }
 
 .shadow {
+	border-radius: 20px;
+	overflow: hidden;
 	position: relative;
-	margin: 100px auto;
+	padding: 4px;
+	// margin: 100px auto;
 	// width: 500px;
 	// height: 350px;
-	background: #010002;
-	border-radius: 20px;
+	// background: #010002;
+	// border-radius: 20px;
 }
 
 .shadow:before,
@@ -42,7 +51,7 @@
 	height: calc(100% + 6px);
 	border-radius: 20px;
 	z-index: -1;
-	animation: animate 3s ease alternate infinite;
+	animation: animate 7s ease alternate infinite;
 }
 .shadow:after {
 	filter: blur(20px);
