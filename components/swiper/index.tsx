@@ -5,6 +5,7 @@ import style from './swiper.module.scss';
 import { CardSwiper } from 'react-card-rotate-swiper';
 import axios from 'axios';
 import Image from 'next/image';
+import Card from '../card';
 
 // const getConfigurableProps = () => ({
 // 	showArrows: boolean('showArrows', true, tooglesGroupId),
@@ -49,25 +50,17 @@ const Swiper = (props: any) => {
 	}, []);
 
 	return (
-		<div className="App">
-			<CardSwiper
-				onSwipe={handleSwipe}
-				className={'swiper'}
-				contents={
-					//fill this your element
-					<div>
-						{images?.map((img: any, i: number) => (
-							<Image
-								key={i}
-								src={img.backdrop_path}
-								alt="img"
-								width={360}
-								height={600}
-							/>
-						))}
-					</div>
-				}
-			/>
+		<div className={style.swiperContainer}>
+			{images?.map((img: any, i: number) => (
+				<CardSwiper
+					detectingSize={500}
+					throwLimit={50}
+					key={i}
+					onSwipe={handleSwipe}
+					className={'swiper'}
+					contents={<Card key={i} img={img.backdrop_path} />}
+				/>
+			))}
 		</div>
 	);
 };
