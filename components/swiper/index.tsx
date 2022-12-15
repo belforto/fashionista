@@ -43,6 +43,9 @@ const Swiper = (props: any) => {
 
 	return (
 		<div className={style.swiperContainer}>
+			<h1 className="title">Street Style</h1>
+			{/* <p className="paragraphText">Swipe left or right for like or dislike</p> */}
+
 			<div className={style.swiperDeck}>
 				{images?.map((img: any, i: number) => (
 					<CardSwiper

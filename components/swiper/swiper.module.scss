@@ -7,11 +7,15 @@
 	display: flex;
 	position: absolute;
 	z-index: -2;
-	top: 60px;
+	top: 5vh;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
 	overflow: hidden;
+	p {
+		font-size: 20px;
+		margin-top: 0px;
+	}
 }
 .controlsContainer {
 	display: flex;
@@ -26,6 +30,8 @@
 	margin-top: 103px;
 }
 .swiperDeck {
+	margin-top: 32px;
+
 	width: 360px;
 	height: 202px;
 	border-radius: 20px;
@@ -62,6 +68,7 @@
 
 .swiper {
 	position: absolute;
+	border-radius: 20px;
 	// &:nth-child(odd) {
 	// 	transform: rotate(3deg);
 	// }

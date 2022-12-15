@@ -18,9 +18,8 @@ export default function Home() {
 			</Head>
 			<div className={style.appContainer}>
 				<div className={style.mainContainer}>
-					<h1 className="title">Street Style</h1>
+					<Swiper />
 				</div>
-				<Swiper />
 			</div>
 		</div>
 	);
