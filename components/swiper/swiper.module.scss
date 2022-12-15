@@ -12,10 +12,6 @@
 	justify-content: center;
 	flex-direction: column;
 	overflow: hidden;
-	p {
-		font-size: 20px;
-		margin-top: 0px;
-	}
 }
 .controlsContainer {
 	display: flex;
@@ -36,6 +32,15 @@
 	height: 202px;
 	border-radius: 20px;
 	position: relative;
+
+	p {
+		font-size: 20px;
+		margin-top: 0px;
+		margin: auto;
+		font-weight: bold;
+		margin-top: 84px;
+		width: 334px;
+	}
 }
 .swiperDeck:before,
 .swiperDeck:after {
