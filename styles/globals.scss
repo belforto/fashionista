@@ -1,0 +1,33 @@
+@import './common.scss';
+
+.appContainer {
+}
+
+body {
+	overflow: hidden;
+	color: white;
+	margin: auto;
+	// font-family: 'Cinzel', serif;
+	/* font-family: 'Italiana', serif; */
+
+	backdrop-filter: blur(5px);
+	background: linear-gradient(
+		to bottom,
+		#000000,
+		#070405,
+		#0c080c,
+		#100c12,
+		#111017,
+		#171724,
+		#1b1d32,
+		#1d2341,
+		#372959,
+		#5b2a6b,
+		#842273,
+		#af0171
+	);
+	height: 100vh;
+}
+.main {
+	overflow: hidden;
+}

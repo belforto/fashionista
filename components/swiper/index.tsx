@@ -4,13 +4,28 @@ import style from './swiper.module.scss';
 import { CardSwiper } from 'react-card-rotate-swiper';
 import axios from 'axios';
 import Card from '../card';
+import IconButton from '../button/iconButton';
+import { BsHeartFill, BsHandThumbsDown } from 'react-icons/bs';
 
 const Swiper = (props: any) => {
 	const IMG_BASE = 'https://image.tmdb.org/t/p/w500';
 	const [images, setImages] = React.useState<any>();
-	const handleSwipe = (d: any) => {
-		console.log('d: ', d);
+	const [animateYes, setAnimateYes] = React.useState<any>(false);
+	const [animateNo, setAnimateNo] = React.useState<any>(false);
+
+	const handleSwipe = (direction: string) => {
 		//fill this your callback
+		switch (direction) {
+			case 'left':
+				setAnimateYes(true);
+				break;
+			case 'right':
+				setAnimateNo(true);
+				break;
+
+			default:
+				break;
+		}
 	};
 	React.useEffect(() => {
 		axios
@@ -21,7 +36,6 @@ const Swiper = (props: any) => {
 				(res: {
 					data: { results: { reverse: () => React.SetStateAction<never[]> } };
 				}) => {
-					console.log('res.data.results: ', res.data.results);
 					setImages(res.data.results.reverse());
 				}
 			);
@@ -40,6 +54,19 @@ const Swiper = (props: any) => {
 						contents={<Card key={i} img={IMG_BASE + img.backdrop_path} />}
 					/>
 				))}
+			</div>
+			<div className={style.controlsContainer}>
+				<IconButton
+					triggerAnimation={animateYes}
+					onAnimationEndHandler={() => setAnimateYes(false)}
+					icon={<BsHeartFill />}
+				/>
+				<IconButton
+					triggerAnimation={animateNo}
+					onAnimationEndHandler={() => setAnimateNo(false)}
+					icon={<BsHandThumbsDown />}
+				/>
+				{/* <Button icon={<FaBeer />} />  */}
 			</div>
 		</div>
 	);
