@@ -4,7 +4,7 @@ import path from 'path';
 const fs = require('fs');
 
 type Data = {
-	name: string;
+	results: string[];
 };
 
 const URL_PHOTOS = 'https://www.instagram.com/style.seconds/';
@@ -19,5 +19,5 @@ export default function handler(
 		.filter((item: any) => !item.isDirectory())
 		.map((item: any) => '/photos/' + item.name);
 	console.log('images: ', images);
-	return res.status(200).json(images);
+	return res.status(200).json({ results: images.slice(0, 10) });
 }

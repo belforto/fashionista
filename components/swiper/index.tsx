@@ -8,10 +8,15 @@ import IconButton from '../button/iconButton';
 import { BsHeartFill, BsHandThumbsDown } from 'react-icons/bs';
 
 const Swiper = (props: any) => {
-	const IMG_BASE = 'https://image.tmdb.org/t/p/w500';
+	let IMG_BASE: any = null;
+
+	if (typeof window !== 'undefined') {
+		IMG_BASE = window.location.href;
+	}
 	const [images, setImages] = React.useState<any>();
 	const [animateYes, setAnimateYes] = React.useState<any>(false);
 	const [animateNo, setAnimateNo] = React.useState<any>(false);
+	const [isLoading, setIsLoading] = React.useState<any>(true);
 
 	const handleSwipe = (direction: string) => {
 		//fill this your callback
@@ -29,9 +34,7 @@ const Swiper = (props: any) => {
 	};
 	React.useEffect(() => {
 		axios
-			.get(
-				'https://api.themoviedb.org/3/discover/movie?api_key=360a9b5e0dea438bac3f653b0e73af47&with_genres=10749'
-			)
+			.get(`${IMG_BASE}api/photos`)
 			.then(
 				(res: {
 					data: { results: { reverse: () => React.SetStateAction<never[]> } };
@@ -39,6 +42,12 @@ const Swiper = (props: any) => {
 					setImages(res.data.results.reverse());
 				}
 			);
+
+		const interval = setTimeout(() => {
+			setIsLoading(false);
+		}, 2000);
+
+		return () => clearTimeout(interval);
 	}, []);
 
 	return (
@@ -53,10 +62,12 @@ const Swiper = (props: any) => {
 						key={i}
 						onSwipe={handleSwipe}
 						className={style.swiper}
-						contents={<Card key={i} img={IMG_BASE + img.backdrop_path} />}
+						contents={
+							<Card key={i} img={IMG_BASE + img} isLoading={isLoading} />
+						}
 					/>
 				))}
-				<p className="paragraphText">That was all, reload for more.</p>
+				<p className="paragraphText">Loading photos...</p>
 			</div>
 			<div className={style.controlsContainer}>
 				<IconButton
