@@ -58,39 +58,16 @@
 	/* font-family: 'Italiana', serif; */
 	font-size: 2rem;
 	font-size: 1rem;
-	color: #fff;
+	color: white;
 }
 .title {
-	font-family: 'Rage Italic';
-	font-size: 4rem;
+	// font-family: 'Rage Italic';
+	font-family: 'Playfair Display SC', serif;
 	// @extend .mainGradient;
 	position: relative;
 	font-size: 3em;
 	font-weight: bold;
-	color: #fff;
-	letter-spacing: 4px;
-	text-shadow: 0 0 20px #f000ff;
-}
-
-.title::before {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: #f000ff;
-	opacity: 0.5;
-	filter: blur(40px);
-	z-index: -2;
-}
-
-.title::after {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	color: #f000ff;
-	filter: blur(15px);
-	z-index: -1;
+	color: white;
+	letter-spacing: 1rem;
+	text-align: center;
 }
