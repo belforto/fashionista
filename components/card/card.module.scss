@@ -8,6 +8,7 @@
 	img {
 		border-radius: 20px;
 		width: inherit;
+		height: 468px;
 	}
 }
 
@@ -15,4 +16,21 @@
 	width: 360px;
 	border-radius: 20px;
 	position: relative;
+}
+
+.invisible {
+	opacity: 0;
+}
+.visible {
+	animation-name: fadeInPhoto;
+	animation-duration: 1s;
+}
+
+@keyframes fadeInPhoto {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
 }
